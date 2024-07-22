@@ -25,14 +25,21 @@ def password_strength(password):
         return "Very Weak"
 
 def main():
-    # Get password input from the user
-    password = input("Enter your password to check its strength: ")
-    
-    # Evaluate the strength of the password
-    strength = password_strength(password)
-    
-    # Print the result
-    print(f"Your password strength is: {strength}")
+    while True:
+        # Get password input from the user
+        password = input("Enter your password to check its strength: ")
+        
+        # Evaluate the strength of the password
+        strength = password_strength(password)
+        
+        # Print the result
+        print(f"Your password strength is: {strength}")
+        
+        # Ask if the user wants to check another password
+        check_another = input("Do you want to check another password? (yes/no): ").strip().lower()
+        if check_another != 'yes':
+            print("Goodbye!")
+            break
 
 if __name__ == "__main__":
     main()
